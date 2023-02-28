@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  background: black;
+  color: wheat;
+}
+
+.head {
+  background-color: black;
+  color: white;
+  margin: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* .user {
+  border: 1px solid #777;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+} */
+
+.card {
+  border: 1px solid #777;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.btn {
+  font-size: 16px;
+  background-color: orangered;
+  color: #fff;
+  border: 1 px solid transparent;
+  border-radius: 5px;
+  padding: 10px 30px;
+  cursor: pointer;
+}

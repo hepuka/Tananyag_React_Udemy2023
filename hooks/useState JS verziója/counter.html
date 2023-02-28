@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="--flex-center --100vh --bg-primary">
+      <div class="container --bg-light --p2 --m2 --center-all">
+        <h3>Regular HTML Page</h3>
+
+        <h1 class="count">0</h1>
+
+        <div class="buttons --flex-center">
+          <button class="subtract --btn --btn-danger">Subtract</button>
+          <button class="reset --btn">Reset</button>
+          <button class="add --btn --btn-primary">Add</button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const count = document.querySelector(".count");
+      const add = document.querySelector(".add");
+      const subtract = document.querySelector(".subtract");
+      const reset = document.querySelector(".reset");
+
+      add.addEventListener("click", () => {
+        count.innerHTML++;
+      });
+      subtract.addEventListener("click", () => {
+        count.innerHTML--;
+      });
+      reset.addEventListener("click", () => {
+        count.innerHTML = 0;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+File - Preferences - Configure User Snippets - 
+
+cl - console log
+
+ct - console table
+
+af - create an arrow function
+
+com - add comment JS
+
+ac - add comment React
+
+us - create useState React
+
+ue - create useEffect React
+
+ur - create useRef React
+
+ured - create useReducer React

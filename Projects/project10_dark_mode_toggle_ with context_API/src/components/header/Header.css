@@ -1,0 +1,54 @@
+header {
+  position: relative;
+  background-color: var(--background);
+  width: 100%;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 1px;
+  width: 1000px;
+  background-color: var(--foreground);
+  transform: translateX(-50%);
+}
+
+nav a {
+  color: var(--foreground);
+}
+
+nav li {
+  font-size: 16px;
+  list-style: none;
+  margin: 0 10px;
+}
+
+.toggle-btn {
+  width: 45px;
+  height: 23px;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+.ball {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: all 0.2s linear;
+}
+
+.move {
+  transform: translateX(22px);
+}
