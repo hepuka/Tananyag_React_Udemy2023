@@ -1,3 +1,12 @@
+/*
+
+A weboldal user és az italok,kávék részét egy függvény rendereli ki. A függvénymegkapja za adatbázist, a komponens nevét és további property-t az adatbázisból.
+
+Majd a függvény visszaadja a tömb bejárásakor a Card komponens ami childrenként megkapja vagy a user vagy ital komponenst.
+
+A return résznél már nem a komponenseket adom meg, hanem csak függvényhívást.
+*/
+
 import "./App.css";
 import Users from "./components/Users.component";
 import Card from "./components/Card.component";
@@ -21,15 +30,18 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="wrap">
       <h1>List of Users</h1>
-      {getData(users, Users)}
+
+      <div className="container">{getData(users, Users)}</div>
 
       <h1>List of Drinks</h1>
-      {getData(italok, Italok)}
+
+      <div className="container">{getData(italok, Italok)}</div>
 
       <h1>List of Coffees</h1>
-      {getData(kavek, Italok)}
+
+      <div className="container">{getData(kavek, Italok)}</div>
     </div>
   );
 }

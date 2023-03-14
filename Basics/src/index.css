@@ -4,6 +4,19 @@
   color: wheat;
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .head {
   background-color: black;
   color: white;
@@ -12,28 +25,34 @@
 
 h1 {
   text-align: center;
+  color: antiquewhite;
+  margin: 40px 0;
 }
-
-/* .user {
-  border: 1px solid #777;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
-} */
 
 .card {
   border: 1px solid #777;
   border-radius: 5px;
-  margin: 10px;
   padding: 10px;
+}
+
+.content {
+  text-align: center;
 }
 
 .btn {
   font-size: 16px;
-  background-color: orangered;
-  color: #fff;
+  background-color: yellowgreen;
+  color: black;
   border: 1 px solid transparent;
   border-radius: 5px;
-  padding: 10px 30px;
+  margin-top: 10px;
+  padding: 5px 10px;
   cursor: pointer;
+}
+
+@media (max-width: 650px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+  }
 }
