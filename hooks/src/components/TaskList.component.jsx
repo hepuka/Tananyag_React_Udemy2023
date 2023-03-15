@@ -10,6 +10,7 @@ const TaskList = () => {
         <Task name="Task 1" isCompleted={true} />
         <Task name="Task 2" isCompleted={false} />
         <Task name="Task 3" isCompleted={true} />
+        <Task name="Task 4" isCompleted={false} />
       </ul>
     </div>
   );

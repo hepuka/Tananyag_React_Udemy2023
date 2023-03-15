@@ -1,3 +1,8 @@
 .complete {
-  color: red;
+  color: green;
+}
+
+li {
+  list-style: none;
+  line-height: 2;
 }
