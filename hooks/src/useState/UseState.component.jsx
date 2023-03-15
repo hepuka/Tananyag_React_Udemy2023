@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 
 const UseState = () => {
-  /*  let text = "Hello World";
-
-  const handleClick = () => {
-    alert("Text changed");
-  }; */
-
   let text = ["Text2"];
   let arrayText = ["elem1 ", "elem2 ", "elem3 "];
 
