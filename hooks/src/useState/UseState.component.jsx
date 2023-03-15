@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 const UseState = () => {
-  let text = ["Text2"];
+  
+  let text = "Text2";
   let arrayText = ["elem1 ", "elem2 ", "elem3 "];
 
   const [text1, setText1] = useState("Text 1");
@@ -22,24 +23,28 @@ const UseState = () => {
 
   return (
     <div>
-      {/* CSS az előre elkészített basic index.css anyagból */}
       <section className="--flex-center --100vh">
         <div className="container --center-all">
           <h3>React Page</h3>
-          <h1>{text1}</h1>, <h1>{text2}</h1>
-          <h1>{text3}</h1>
+          <h1>{text1}</h1>
           <button
             className="--btn --btn-primary --btn-lg"
             onClick={handleClick1}
           >
             Change Text 1
           </button>
+
+          <h1>{text2}</h1>
+
           <button
             className="--btn --btn-primary --btn-lg"
             onClick={handleClick2}
           >
             Change Text 2
           </button>
+
+          <h1>{text3}</h1>
+
           <button
             className="--btn --btn-primary --btn-lg"
             onClick={handleClick3}

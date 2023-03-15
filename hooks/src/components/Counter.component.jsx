@@ -4,7 +4,7 @@ const Counter = () => {
   const [count, setCount] = useState(0);
 
   const handleSubtract = () => {
-    /* így csak 1-el csökkenti */
+    /* így csak 1-el csökkenti, mert nem függvénnyel csökkentem */
 
     setCount(count - 1);
   };
@@ -14,12 +14,12 @@ const Counter = () => {
   };
 
   const handleAdd = () => {
-    /* ha 2-szer hívjuk meg akkor 2-vel növeli */
+    /* ha 2-szer hívjuk meg akkor 2-vel növeli, ha függvénnyel növelem az értéket*/
 
     setCount((count) => count + 1);
   };
 
-  let color = "#444";
+  let color;
 
   if (count >= 1) {
     color = "blue";
