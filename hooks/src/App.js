@@ -5,12 +5,14 @@
 // import UseStateArray from "./useState/useStateArray.component";
 // import UseStateObject from "./useState/UseStateObject.component";
 // import Conditional from "./components/Conditional.component";
-import TaskList from "./components/TaskList.component";
+// import TaskList from "./components/TaskList.component";
+// import UseEffect from "./useEffect/UseEffect.component";
+import UseEffectCleanUp from "./useEffect/UseEffectCleanUp.component";
 
 function App() {
   return (
     <div>
-      <TaskList />
+      <UseEffectCleanUp />
     </div>
   );
 }

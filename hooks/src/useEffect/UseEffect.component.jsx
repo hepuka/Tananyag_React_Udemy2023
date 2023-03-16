@@ -1,27 +1,30 @@
 import React, { useState, useEffect } from "react";
 
-// On every re-render
-// On initial render
-// On when a state or prop changes
+// On initial render, - üres tömb van megadva 2.paraméternek
+// On when a state or prop changes - tömbben meg van adva a state változó neve 2.paraméternek
+// On every re-render - ha nincs megadva semmi 2.paraméternek
 
 const UseEffect = () => {
   const [count, setCount] = useState(0);
 
-  //  ezesetben mindenegyes rendereléskor lefut
+  //  ez esetben mindenegyes rendereléskor lefut
   //   useEffect(() => {
   //     console.log("UseEffect Triggered everytime");
   //   });
 
-  // csak egyszer fut le az első rendereléskor ha a 2.paraméterének megadott tömb üres
+  // csak egyszer fut le az első rendereléskor ha a 2.paraméterének megadott tömb(useState) üres
   useEffect(() => {
     console.log("UseEffect Triggered first time");
   }, []);
 
-  //itt akkor fut le amikor a props megváltozik
-  //ezesetben akkor változik meg, ha a gombbal növelem az értéket
+  //itt akkor fut le amikor a props állapota megváltozik. Ezesetben akkor változik meg, ha a gombbal növelem az értéket. Ha a useState-ben a count érték megváltozik.
+  //Végül is a useState állapotának megváltozására működik a useEffect
+
   useEffect(() => {
     console.log(`UseEffect Triggered props changed to ${count}`);
-  }, [count]);
+
+    //count érték változásától függ most a useEffect működése. Azt a useState változót kell ide írni amelyik megváltozására kell, hogy működjön a useEffect.
+  }, [count]); //függőségi változó kell ide
 
   return (
     <div className="--center-all">
@@ -31,6 +34,12 @@ const UseEffect = () => {
         onClick={() => setCount(count + 1)}
       >
         increment
+      </button>
+      <button
+        className="--btn --btn-primary"
+        onClick={() => setCount(count - 1)}
+      >
+        decrement
       </button>
     </div>
   );
