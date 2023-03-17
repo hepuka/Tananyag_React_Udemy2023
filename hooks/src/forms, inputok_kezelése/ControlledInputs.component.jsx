@@ -1,5 +1,13 @@
 import React, { useState } from "react";
 
+/*input értékek olvasása és beállítása a state-eken keresztül történik
+
+input mezőből egy onChange metóduson keresztül a komponens state-jét beállítjuk az e.target.value-al;  setName(e.target.value);
+
+ugyanennek az imnput mezőnek a value értékének megadjuk a state változót, ami az előző onhange-el beállítottink; value={name}
+
+a handleSubmit mezódust beállítjuk a form Submit gombjára. A függvény az e.preventDefault(); beállítása után az input mezőt tartalmát kitörlni és a tartalmat beállítja a fogadó mező state-jébe; setRename(name);
+*/
 const ControlledInputs = () => {
   const [name, setName] = useState("");
   const [job, setJob] = useState("");
@@ -24,8 +32,8 @@ const ControlledInputs = () => {
     <div className="--bg-primary --mh-100vh">
       <h1 className="--text-light --text-center">Controlled Inputs</h1>
 
-      <div className="--flex-center">
-        <div className="--card --bg-light --width-500px --flex-center">
+      <div className="--flex-column">
+        <div className="--card --bg-light --width-500px --flex-center --mb2">
           <form className="--form-control">
             <div>
               <label htmlFor="name">Name: </label>
@@ -59,7 +67,7 @@ const ControlledInputs = () => {
           </form>
         </div>
 
-        {/*---------------- mezők ahová elküldjük az aadatokat ---------------*/}
+        {/*---------------- mezők ahová elküldjük az adatokat ---------------*/}
         <div className="--card --bg-light --width-500px --flex-center">
           <form className="--form-control">
             <div>

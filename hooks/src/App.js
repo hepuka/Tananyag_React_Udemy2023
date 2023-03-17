@@ -7,12 +7,13 @@
 // import Conditional from "./components/Conditional.component";
 // import TaskList from "./components/TaskList.component";
 // import UseEffect from "./useEffect/UseEffect.component";
-import UseEffectCleanUp from "./useEffect/UseEffectCleanUp.component";
+// import UseEffectCleanUp from "./useEffect/UseEffectCleanUp.component";
+import ControlledInputs from "./forms, inputok_kezelése/ControlledInputs.component";
 
 function App() {
   return (
     <div>
-      <UseEffectCleanUp />
+      <ControlledInputs />
     </div>
   );
 }

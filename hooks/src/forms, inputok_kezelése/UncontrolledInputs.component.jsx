@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from "react";
 //Target DOM  nodes/elements
 //Preserve values during re-render
 
+//useRef-en keresztül kerül az input megadásra
 const UncontrolledInputs = () => {
   const nameInputref = useRef(null);
   const jobInputRef = useRef(null);

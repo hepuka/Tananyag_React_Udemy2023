@@ -84,6 +84,9 @@ section {
   min-height: 100vh;
 }
 
+.--gap-5 {
+  column-gap: 15px;
+}
 /* Grid */
 .--grid-15 {
   display: grid;
