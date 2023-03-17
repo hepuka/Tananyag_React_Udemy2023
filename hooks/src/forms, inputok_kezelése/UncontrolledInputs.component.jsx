@@ -21,7 +21,7 @@ const UncontrolledInputs = () => {
     jobInputRef.current.value = "";
   };
 
-  /*az oldal betöltésekor a fókusz a név mezőre kerül elhelyezésre, itt villog majd a kurzor*/
+  /*az oldal betöltésekor a fókusz a név mezőre kerül, itt villog a kurzor*/
   useEffect(() => {
     nameInputref.current.focus();
   }, []);
