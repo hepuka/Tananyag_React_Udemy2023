@@ -18,10 +18,8 @@ const ControlledInputs = () => {
   const handleSubmit = (e) => {
     //fontos a preventálás mert a submit gomb elküldése után újratöltődik az oldal
     //ezzel azt érjük el, hogy nem töltődik újra
+
     e.preventDefault();
-
-    console.log(name, job);
-
     setName("");
     setJob("");
     setRename(name);
@@ -32,9 +30,9 @@ const ControlledInputs = () => {
     <div className="--bg-primary --mh-100vh">
       <h1 className="--text-light --text-center">Controlled Inputs</h1>
 
-      <div className="--flex-column">
+      <div className="--flex-column --mx3">
         <div className="--card --bg-light --width-500px --flex-center --mb2">
-          <form className="--form-control">
+          <form onSubmit={handleSubmit} className="--form-control">
             <div>
               <label htmlFor="name">Name: </label>
               <input
@@ -57,11 +55,7 @@ const ControlledInputs = () => {
                 }}
               />
             </div>
-            <button
-              type="submit"
-              className="--btn --btn-block"
-              onClick={handleSubmit}
-            >
+            <button type="submit" className="--btn --btn-block">
               Submit User
             </button>
           </form>

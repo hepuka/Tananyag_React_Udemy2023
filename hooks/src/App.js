@@ -8,12 +8,14 @@
 // import TaskList from "./components/TaskList.component";
 // import UseEffect from "./useEffect/UseEffect.component";
 // import UseEffectCleanUp from "./useEffect/UseEffectCleanUp.component";
-import ControlledInputs from "./forms, inputok_kezelése/ControlledInputs.component";
+// import ControlledInputs from "./forms, inputok_kezelése/ControlledInputs.component";
+// import MultipleControlledInputs from "./forms, inputok_kezelése/MultipleControlledInputs.component";
+import UncontrolledInputs from "./forms, inputok_kezelése/UncontrolledInputs.component";
 
 function App() {
   return (
     <div>
-      <ControlledInputs />
+      <UncontrolledInputs />
     </div>
   );
 }

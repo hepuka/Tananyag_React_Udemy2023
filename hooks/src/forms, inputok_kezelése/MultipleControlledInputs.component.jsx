@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 
+/*
+- több state van egy state-be helyezve
+- a statenév.proprty-vel tudom elélrni a state adatait*/
+
 const MultipleControlledInputs = () => {
-  const [person, setPerson] = useState({ name: "", job: "", company: "" });
+  const [person, setPerson] = useState({
+    name: "",
+    job: "",
+    company: "",
+  });
 
+  //itt állítom be a state változóit az
   const handleChange = (e) => {
-    console.log(e.target.name);
-    console.log(e.target.value);
-
     const name = e.target.name;
     const value = e.target.value;
 
@@ -25,7 +31,7 @@ const MultipleControlledInputs = () => {
     <div className="--bg-primary --mh-100vh">
       <h1 className="--text-light --text-center">Multiple Controlled Inputs</h1>
 
-      <div className="--flex-center">
+      <div className="--flex-column">
         <div className="--card --bg-light --width-500px --flex-center">
           <form onSubmit={handleSubmit} className="--form-control">
             <div>
