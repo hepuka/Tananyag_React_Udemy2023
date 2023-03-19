@@ -1,4 +1,4 @@
-// import UseReducerBasics from "./useReducer/UseReducerBasics.component";
+import UseReducerBasics from "./useReducer/UseReducerBasics.component";
 // import GitHubUsers from "./useFetch/GitHubUsers";
 // import UseState from "./useState/UseState.component";
 // import Counter from "./components/Counter.component";
@@ -15,7 +15,7 @@ import UncontrolledInputs from "./forms, inputok_kezelése/UncontrolledInputs.co
 function App() {
   return (
     <div>
-      <UncontrolledInputs />
+      <UseReducerBasics />
     </div>
   );
 }
