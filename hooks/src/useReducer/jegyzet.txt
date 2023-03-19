@@ -1,0 +1,74 @@
+A useReducer-el egyszerre több függvénnyel is tudjuk manipulálni a state-et
+
+useState-nél 3 függvény ekllett a számláló működéséhez és mind a három ugyanazt a state-et módosította.
+
+Ezt a folyamatot csökkenti egy függvényre a useReducer
+
+const initialstate = {count:0};
+
+const [] = useReducer(reducerfunction, initialstate);
+
+ - a hooknak kell, hogy legyen egy initialstate értéke
+ - useReducer esetében az initialstate mindig egy objektum, (useState esetében bármi lehet)
+
+ 1.létrehozzuk a state-et
+
+   const [state, dispatch] = useReducer(reducer, initialState);
+
+2. Létrehozzuk az initialState-et és a reducer függvényt
+
+    const initialState = {
+        count: 0,
+    };
+
+
+    const reducer = (state, action) => {}
+
+3. Létrehozzuk a reducer függvény alfüggvényeit, azokat a függényeket amelyekben megadjuk, hogy egyes dispatch-ek mit csináljanak, amik majd módosítani fogják a state változót. Ezeket az alfüggvényeket kell megadni onclick eseményként a gomboknak. Itt csak a type-ot kell megadni, magát a kódot amivel módosítjuk a state-et, azt a reducer függvényben írjuk meg.
+
+    const handleSubtract = () => {
+        //setCount(count - 1);
+        //const id = "12345";
+        dispatch({
+        type: "SUBTRACT", //egy property-t meg kell adni
+        // payload: id, - opcionális
+        });
+    };
+
+    const handleReset = () => {
+        //setCount(0);
+        dispatch({
+        type: "RESET",
+        });
+    };
+
+    const handleAdd = () => {
+        // setCount(count + 1);
+        dispatch({
+        type: "ADD",
+        });
+    };
+
+
+4.Végül a fő reducer függvényben meghatározzuk, hogy egyes dispatch-ek mit csináljanak, egy switch kapcsolóval. A state magát a state változót jelenti, az action a dipatch-et.
+
+ const reducer = (state, action) => {
+    
+    switch (action.type) {
+      case "SUBTRACT":
+        return { count: state.count - 1 };
+
+      case "ADD":
+        return { count: state.count + 1 };
+
+      case "RESET":
+        return { count: (state.count = 0) };
+
+      default:
+        return state;
+
+    }
+ }
+
+
+
