@@ -10,12 +10,14 @@ import UseReducerBasics from "./useReducer/UseReducerBasics.component";
 // import UseEffectCleanUp from "./useEffect/UseEffectCleanUp.component";
 // import ControlledInputs from "./forms, inputok_kezelése/ControlledInputs.component";
 // import MultipleControlledInputs from "./forms, inputok_kezelése/MultipleControlledInputs.component";
-import UncontrolledInputs from "./forms, inputok_kezelése/UncontrolledInputs.component";
+// import UncontrolledInputs from "./forms, inputok_kezelése/UncontrolledInputs.component";
+
+import Main from "./propsDrilling/Main";
 
 function App() {
   return (
     <div>
-      <UseReducerBasics />
+      <Main />
     </div>
   );
 }
