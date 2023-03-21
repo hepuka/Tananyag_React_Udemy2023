@@ -2,6 +2,8 @@ Context API (Props drilling)
 
 Context API : Amikor egy komponenből közvetlenül egy másik kkomponensnek akarunk átadni adatokat, függvényeket. Sokban segíti a komponenseknek átadott adatok kezelését, ha sok gyerek komponens van. Nem kell mindenegyes szintnek átadni, hanem a szülőből közvetlenül az adott gyerek komponensnek tudjuk átadni az adatokat, függvényeket. 
 
+Akkor alkalmas használni ha a 2. vagy ennél mélyebb szintű gyerek komponenseknek kell áztadni aza datokat, függvényeket.
+
 pl. A Main komponensben megírt deleteUser függvényt szeretnénk átadni közvetlenül a User komponensnek, a UserList komponens kihagyása nélkül.
 
 
