@@ -1,5 +1,5 @@
-import UseReducerBasics from "./useReducer/UseReducerBasics.component";
-// import GitHubUsers from "./useFetch/GitHubUsers";
+// import UseReducerBasics from "./useReducer/UseReducerBasics.component";
+import GitHubUsers from "./useFetch/GitHubUsers";
 // import UseState from "./useState/UseState.component";
 // import Counter from "./components/Counter.component";
 // import UseStateArray from "./useState/useStateArray.component";
@@ -11,13 +11,12 @@ import UseReducerBasics from "./useReducer/UseReducerBasics.component";
 // import ControlledInputs from "./forms, inputok_kezelése/ControlledInputs.component";
 // import MultipleControlledInputs from "./forms, inputok_kezelése/MultipleControlledInputs.component";
 // import UncontrolledInputs from "./forms, inputok_kezelése/UncontrolledInputs.component";
-
-import Main from "./propsDrilling/Main";
+// import Main from "./propsDrilling/Main";
 
 function App() {
   return (
     <div>
-      <Main />
+      <GitHubUsers />
     </div>
   );
 }

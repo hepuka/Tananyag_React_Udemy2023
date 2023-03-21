@@ -1,0 +1,13 @@
+egy Fetch komponens létrehozása, amely mindenegyes fetch-eléskor alkalmazható.
+
+valójában egy saját HOOK-ot készítünk
+
+useFetch.component.jsx tartalmazza az általános fetch eljárást, amit a GitHubUsers komponensben alkalmaztam.
+
+GitHubUsers komponens
+
+- destruktúrálással meghívom a fetch komponenst, aminek átadom a fetch.elni kívánst url-t
+
+ const { data, error, isLoading } = useFetch(url);
+
+- a return részben a hook-ban megkapott data adatot járom be és adom vissza a tömb objektumait.

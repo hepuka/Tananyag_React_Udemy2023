@@ -26,7 +26,7 @@ const GitHubUsers = () => {
             </h4>
           ) : (
             data.map((item) => {
-              // destruktúrálással kiszedem a users-ből propery-ket ami kell
+              // destruktúrálással kiszedem a item-ből propery-ket ami kell
               const { id, login, avatar_url, html_url } = item;
 
               return (
