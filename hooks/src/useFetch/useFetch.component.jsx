@@ -5,20 +5,20 @@ const useFetch = (url) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const getUsers = async () => {
+  const getData = async () => {
     setIsLoading(true);
     setError(false);
 
     try {
       const respons = await fetch(url);
-      console.log(respons);
+      //console.log(respons);
 
       if (!respons.ok) {
         throw new Error("Something wenr frong!");
       }
 
       const data = await respons.json();
-      console.log(data);
+      //console.log(data);
 
       setData(data);
       setIsLoading(false);
@@ -30,7 +30,7 @@ const useFetch = (url) => {
   };
 
   useEffect(() => {
-    getUsers();
+    getData();
   }, [url]);
 
   return { data, error, isLoading };

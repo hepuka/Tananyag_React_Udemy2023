@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import UserContext from "./userContext";
 
 const User = ({ id, name }) => {
+  //így is fogadható az átadott adat
+  //const data = useContext(UserContext);
+
   const { deleteUser } = useContext(UserContext);
 
   return (

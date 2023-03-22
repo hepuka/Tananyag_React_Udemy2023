@@ -1,0 +1,35 @@
+Context API (Props drilling)
+
+Context API : Amikor egy komponenből közvetlenül egy másik kkomponensnek akarunk átadni adatokat, függvényeket. Sokban segíti a komponenseknek átadott adatok kezelését, ha sok gyerek komponens van. Nem kell mindenegyes szintnek átadni, hanem a szülőből közvetlenül az adott gyerek komponensnek tudjuk átadni az adatokat, függvényeket. 
+
+Akkor alkalmas használni ha a 2. vagy ennél mélyebb szintű gyerek komponenseknek kell áztadni aza datokat, függvényeket.
+
+pl. A Main komponensben megírt deleteUser függvényt szeretnénk átadni közvetlenül a User komponensnek, a UserList komponens kihagyása nélkül.
+
+
+//1. Create the context in a seperate file (context_API folder)
+//2. Provide the context to the component
+//3. Use the context
+
+
+1. külön fájl készítése, ha sok context fájl van akkor egy mappába rakva. 
+2. createContext függvénnyel létrehozunk egy context-et, majd exportáljuk azt. Ez esetben egy UserContext-et hoztunk létre.
+
+3. Adatok átadása közvetlenül a célkomponensnek.
+- A szülőmappában, ahonnan aza datokat adjuk át be kell importálni a context fájlt (UserContext)
+- <UserContext.Provider nyitó és záró tag-ek kell létrehozni azon komponens köré amelynek az adatokat szeretnénk átadni. Ez esetben a csak teljes UserList-nek átadom mert a UserList így emgkapja a state-et amiből kilistázza az adatokat és egyben megkapja a delete függvényt közvetlenül a User komponens is.
+- az adatok átadása a value props-al történik felsorolással
+
+- A fogadó komponensben importálni kell a useContext hook-ot
+- destruktúrálással ki kell szedni a szülőből átadott props-okat amjd a useContext-nek meg kell adni a külön fájlban deklarált context változót(UserContext)
+
+
+User komponens mint fogadó:
+const { deleteUser } = useContext(UserContext);
+
+-majd a destruktúrálással kiszedett adatot, függvényt használjuk a komponensben.
+
+UserList komponens mint fogadó:
+const { users } = useContext(UserContext);
+
+-majd a destruktúrálással kiszedett adatot(users) használom a return-ben bejárásra
