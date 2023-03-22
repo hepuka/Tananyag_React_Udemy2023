@@ -1,0 +1,18 @@
+npm i react-router-dom
+
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+
+App.js
+- BrowserRouter foglalja magába az összes route-ot
+- Ebben a Routes foglalja magába az össze a Route-ot
+- Egyes oldalakhoz a route megadása
+
+    <Route path="/" element={<Home />} />
+    <Route path="/about/*" element={<About />} />
+    <Route path="/blogs/*" element={<Blogs />} />
+    <Route path="/blog/:id" element={<BlogDetails />} />
+
+        path: az elérési út
+        element: a komponens, oldalak neve
+

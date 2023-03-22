@@ -6,9 +6,11 @@ const Navbar = () => {
   return (
     <div className="--flex-center --p2 --bg-primary">
       <nav>
-        {/*         <Link to="/">Home</Link>
+        {/* 
+        <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/blogs">Blogs</Link> */}
+        <Link to="/blogs">Blogs</Link> 
+        */}
         <NavLink
           to="/"
           className={({ isActive }) => (isActive ? "active" : "")}
