@@ -6,7 +6,7 @@ const counterSlice = createSlice({
     count: 0,
   },
   reducer: {
-    // actions
+    // action-ök megadása a counter kezelésére
     ADD: (state) => {
       state.count += 1;
     },
@@ -23,4 +23,5 @@ const counterSlice = createSlice({
 });
 
 export const { ADD, ADD_NUMBER, SUBTRACT, RESET } = counterSlice.actions;
+
 export default counterSlice.reducer;

@@ -1,0 +1,65 @@
+redux.js.org
+redux-toolkit.js.org
+
+- ez egy state management eszköz
+- hasonló mint a contextAPI
+- nagyobb,komplexebb alkalmazásoknál használható
+- ContextAPI a kisebb alkalmazásoknál használható
+
+- ez esetben is egy különálló fájlt, konténert kell készíteni a reduxnak ahol a state-ek vannak, és a komponensek hivatkoznak (érik el) a neki szükésges state-eket
+
+
+Működés: Redux működése.png
+
+Egy store-ban tároljuk a különböző state-eket, adatokat (pl. Auth state, theme state) és a komponens a useSelector() hook-al válassza ki azt a state-et, adatot amit használni akar.
+Ha módosítani kell a komponensnek a store-ban lévő state-et (pl. true-ra állítani az isLoged state-et ha valaki bejelentkezett) akkor nem tudja azt közvetlenül megtenni hanem egy reducer függvénynek kell megmodania, hogy milyen action-t akar végrehajtani (hasonlóan mint a contextAPI-nál a dispatch).
+A komponens a useDispatch() hook-nak adja meg az action nevét és ez az action lesz elküldve a reducer ffüggvénynek
+
+
+REDUX INSTRUCTIONS
+-- Install redux - npm install redux react-redux
+1. Create a store - where all your data would be stored - store.js fájlban
+2. Create a reducer and pass it as an argument to the store - - store.js fájlban
+3. Provide your store to the App.js component (index.js fájl is kell)
+4. Use/access the store data from any component
+5. Dispatch action from the respective component
+
+
+
+REDUX TOOLKIT INSTRUCTIONS
+-- Install redux toolkit - npm install @reduxjs/toolkit
+1. combine reducer and actions into a slice - 2 db slice fájl
+2. replace createStore() with configureStore() - store.js fájl
+3. Update useSelector() and useDispatch() on the component
+
+
+//window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
+
+
+CounterSlice.js:
+name, initialstate és a reducerek megadása. 
+
+-Initialstate-ben ezesetben a count:0 mert a számlálónak ez az alapértelmezett értéke
+-Reducerben az action-öket kell megadni, mi a neve, mit kap meg bemenetként(state) és a törzsben azt, hogy mit csináljon ez az action.
+- exportálni az action-öket
+
+    export const { ADD, ADD_NUMBER, SUBTRACT, RESET } = counterSlice.actions;
+
+
+Store.js:
+configureStore függvénnyel megadni a reducer property-t amibe beimportálni a slice-okat
+
+
+
+Counter.js:
+
+- useSelectorral kiválasztani a storeból és a slice fájlokból amit használni kell
+    const count = useSelector((state) => state.counter.count);
+
+- importálni a slice-okból exportált action-öket
+    import { ADD, ADD_NUMBER, SUBTRACT, RESET } from "../store/slice/counterSlice";
+
+- return részben alkalmzni az importált action-öket onClick eseményekre
+
+    pl.: onClick={() => dispatch(SUBTRACT())}

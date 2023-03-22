@@ -3,10 +3,10 @@ import { ADD, ADD_NUMBER, SUBTRACT, RESET } from "../store/slice/counterSlice";
 import { TOGGLE_AUTH } from "../store/slice/authSlice";
 
 const Counter = () => {
+  /*state.counter.count az a counter amit a store.js reducer objektum egyik property-jének a neve, és a count a counterSlice-ban lévő initialstate objektum property-je */
   const count = useSelector((state) => state.counter.count);
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
-  console.log(count);
   console.log(isLoggedIn);
 
   const dispatch = useDispatch();
@@ -18,11 +18,11 @@ const Counter = () => {
           className="--btn --btn-danger"
           onClick={() => dispatch(TOGGLE_AUTH())}
         >
-          {isLoggedIn ? "Log Out" : "log In"}
+          {isLoggedIn ? "Log Out" : "Log In"}
         </button>
         <hr />
 
-        {isLoggedIn ? (
+        {!isLoggedIn ? (
           <p>Please Log In</p>
         ) : (
           <>
@@ -46,7 +46,7 @@ const Counter = () => {
               </button>
               <button
                 className=" --btn --btn-primary"
-                onClick={() => dispatch(ADD_NUMBER())}
+                onClick={() => dispatch(ADD_NUMBER(5))}
               >
                 Add 5
               </button>
