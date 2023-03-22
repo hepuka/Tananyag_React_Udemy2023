@@ -10,8 +10,10 @@ const BlogDetails = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    //megkeressük a blogot az id alapján amire kattintottunk
     const thisBlog = blogs.find((item) => item.id === parseInt(id));
 
+    //thisblog alapján beállítjuk a state-eket
     setTitle(thisBlog.title);
     setAuthor(thisBlog.author);
     setDetails(thisBlog.details);

@@ -3,7 +3,7 @@ npm i react-router-dom
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 
-App.js
+App.js:
 - BrowserRouter foglalja magába az összes route-ot
 - Ebben a Routes foglalja magába az össze a Route-ot
 - Egyes oldalakhoz a route megadása
@@ -15,4 +15,80 @@ App.js
 
         path: az elérési út
         element: a komponens, oldalak neve
+
+
+Az App.js.ben csak azt kell megadni, hogy milyen elérési útra melyik oldal vagy komponens jelenjen meg
+A komponens fájlban a NavLink to-val kell megadni  ugyanezt az elérési utat
+
+<Route path="/about/*" element={<About />} />
+<NavLink to="/about">About</NavLink>
+
+
+Navbar komponens:
+<nav> közé kell tenni <Link to="/">Home</Link>
+
+NavLInk használata: van egy isActive property-je, külön enm kell függvény rá, ezzel lehet meghatározni, hogy melyik className legyen a linkre. Így lehet jelölést rakni a linkre amelyik aktív 
+
+  className={({ isActive }) => (isActive ? "active" : "")}
+
+ezt csak az első NavLink-re kell használni, a menü többi részére nem
+
+
+Page Not Found:
+<Route path="*" element={<NotFound />} />
+
+
+oldal levédése, hogy csak bejelentkezett állapotban lehessen megnézni:
+
+- return-ön kívül létrehozni egy state-et
+
+const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+-majd a Route-nál megadni Így
+
+<Route
+  path="/view"
+  element={isLoggedIn ? <Navigate to="/blogs" /> : <h4>Please log in!</h4>}/>
+
+
+Nested routes:
+egy oldalról beágyazva nyílik egy másik oldal. Az App.js-ben az oldal path-je után kell egy exra jelölés /* kell. * jelöli, hogy az about után még lehet bátmilyen aloldal
+
+
+pl. az about oldalról nyílik beágyazva az info oldal: /about/info
+
+Az about komponensben megadva
+      <Routes>
+        <Route path="info" element={<Info />} />
+      </Routes>
+
+App komponensben
+
+<Route path="/about/*" element={<About />} />
+
+
+
+useParams hook:
+
+Blogs komponensben bolgs.map-el ki van rebderelve a tömben lévő objektumok, és mindegyes iterációban a Link to-val megadjuk, hogy egyes bejegyzések a:
+
+<Link to={`/blog/${id}`}>Read More</Link> -al jelenjenek meg.
+
+Ehhez az App.js ben így kell megadni a BlogDetails útvonalat:
+
+<Route path="/blog/:id" element={<BlogDetails />} /> és a BlogDetails koponensben megjelenik a bejegyzés tartalma.
+
+A BlogDetails komponensben mindehhez meg kell adni a useParams-ot
+
+  const { id } = useParams();
+
+  és a useEffect-el az id alapján a blogs.find()-al meg kell kapni a blogot
+
+A BlogDetails komponensben a:
+
+<Link to="/blogs">{`<<< Back to Blogs`}</Link> -al lehet visszatérni a bloglistára
+
+
+
+
 
