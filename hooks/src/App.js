@@ -12,13 +12,13 @@
 // import MultipleControlledInputs from "./forms, inputok_kezelése/MultipleControlledInputs.component";
 // import UncontrolledInputs from "./forms, inputok_kezelése/UncontrolledInputs.component";
 // import Main from "./propsDrilling/Main";
-
-import RefTutorial from "./useRef/RefTutorial";
+import ContextTutorial from "./propsDrilling/ContextTutorial";
+// import RefTutorial from "./useRef/RefTutorial";
 
 function App() {
   return (
     <div>
-      <RefTutorial />
+      <ContextTutorial />
     </div>
   );
 }
