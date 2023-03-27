@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 // On initial render, - üres tömb van megadva 2.paraméternek
 // On when a state or prop changes - tömbben meg van adva a state változó neve 2.paraméternek
@@ -6,6 +7,7 @@ import React, { useState, useEffect } from "react";
 
 const UseEffect = () => {
   const [count, setCount] = useState(0);
+  const [data, setData] = useState([]);
 
   //  ez esetben mindenegyes rendereléskor lefut
   //   useEffect(() => {
@@ -20,11 +22,23 @@ const UseEffect = () => {
   //itt akkor fut le amikor a props állapota megváltozik. Ezesetben akkor változik meg, ha a gombbal növelem az értéket. Ha a useState-ben a count érték megváltozik.
   //Végül is a useState állapotának megváltozására működik a useEffect
 
-  useEffect(() => {
+  /*   useEffect(() => {
     console.log(`UseEffect Triggered props changed to ${count}`);
 
     //count érték változásától függ most a useEffect működése. Azt a useState változót kell ide írni amelyik megváltozására kell, hogy működjön a useEffect.
-  }, [count]); //függőségi változó kell ide
+  }, [count]); //függőségi változó kell ide */
+
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/comments")
+      .then((res) => setData(res.data));
+
+    /*     fetch("https://jsonplaceholder.typicode.com/comments")
+      .then((res) => res.json())
+      .then((data) => setData(data)); */
+  }, [count]); //egy useEffect-el használom a két usestate-et
+
+  console.log(data[0]);
 
   return (
     <div className="--center-all">
