@@ -6,12 +6,25 @@ Ebben az esetben a children elem egy sima szöveg
 
 */
 
-import React from "react";
+import React, { useState } from "react";
+import Modal from "./Modal";
 
-const Button = ({ children }) => {
+const Button = ({ children, data }) => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [isBlured, setIsBlured] = useState(false);
+
   return (
     <div>
-      <button className="btn">{children}</button>
+      <button
+        className="openModalBtn"
+        onClick={() => {
+          setModalOpen(true);
+          setIsBlured(true);
+        }}
+      >
+        {children}
+      </button>
+      {modalOpen && <Modal setOpenModal={setModalOpen} data={data} />}
     </div>
   );
 };

@@ -13,7 +13,7 @@ const Italok = ({ name, packaging, price }) => {
         <h2>Name: {name}</h2>
         <h3>Packaging: {packaging}</h3>
         <h3>Price: {price}</h3>
-        <Button>Learn more</Button>
+        <Button data={{ name, packaging, price }}>Learn more</Button>
       </div>
     </div>
   );

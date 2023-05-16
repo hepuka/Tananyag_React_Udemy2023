@@ -7,28 +7,12 @@ Majd a függvény visszaadja a tömb bejárásakor a Card komponens ami children
 A return résznél már nem a komponenseket adom meg, hanem csak függvényhívást.
 */
 
-import "./App.css";
 import Users from "./components/Users.component";
-import Card from "./components/Card.component";
 import { users, italok, kavek } from "../src/data.js";
 import Italok from "./components/Italok.component";
+import { getData } from "./getData";
 
 function App() {
-  function getData(db, Component, packaging, price) {
-    return db.map((item) => {
-      return (
-        <Card key={item.id}>
-          <Component
-            name={item.name}
-            age={item.age}
-            packaging={item.packaging}
-            price={item.price}
-          />
-        </Card>
-      );
-    });
-  }
-
   return (
     <div className="wrap">
       <h1>List of Users</h1>
