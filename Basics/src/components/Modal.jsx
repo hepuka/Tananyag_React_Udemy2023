@@ -2,7 +2,7 @@ import React from "react";
 import "./Modal.css";
 import { getDataToModal } from "../getDataToModal";
 
-const Modal = ({ setOpenModal, data }) => {
+const Modal = ({ setOpenModal, setIsBlured, data }) => {
   return (
     <>
       <div className="modalContainer">
@@ -11,6 +11,7 @@ const Modal = ({ setOpenModal, data }) => {
           <button
             onClick={() => {
               setOpenModal(false);
+              setIsBlured(false);
             }}
             id="cancelBtn"
           >

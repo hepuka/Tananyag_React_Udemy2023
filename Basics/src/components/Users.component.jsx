@@ -5,7 +5,6 @@ A button elemet egy másik komponens biztosítja. A button komponens children el
 
 import React from "react";
 import Button from "./Button.component";
-import Modal from "./Modal";
 
 const Users = ({ name, age }) => {
   return (
