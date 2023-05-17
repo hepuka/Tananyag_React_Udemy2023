@@ -1,6 +1,6 @@
 import Card from "./components/Card.component";
 
-export const getData = (db, Component) => {
+export const getData = (db, Component, blur) => {
   return db.map((item) => {
     return (
       <Card key={item.id}>

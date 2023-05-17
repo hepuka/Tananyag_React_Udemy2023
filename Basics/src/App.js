@@ -11,10 +11,13 @@ import Users from "./components/Users.component";
 import { users, italok, kavek } from "../src/data.js";
 import Italok from "./components/Italok.component";
 import { getData } from "./getData";
+import { useState } from "react";
 
 function App() {
+  const [isBlured, setIsBlured] = useState(false);
+
   return (
-    <div className="wrap">
+    <div className={isBlured ? "is-blurred" : "wrap"}>
       <h1>List of Users</h1>
 
       <div className="container">{getData(users, Users)}</div>

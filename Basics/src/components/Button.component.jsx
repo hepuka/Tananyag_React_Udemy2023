@@ -13,8 +13,6 @@ const Button = ({ children, data }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [isBlured, setIsBlured] = useState(false);
 
-  console.log(isBlured);
-  
   return (
     <div>
       <button
