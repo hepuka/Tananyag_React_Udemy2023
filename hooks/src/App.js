@@ -9,16 +9,16 @@
 // import UseEffect from "./useEffect/UseEffect.component";
 // import UseEffectCleanUp from "./useEffect/UseEffectCleanUp.component";
 // import ControlledInputs from "./forms, inputok_kezelése/ControlledInputs.component";
-// import MultipleControlledInputs from "./forms, inputok_kezelése/MultipleControlledInputs.component";
+import MultipleControlledInputs from "./forms, inputok_kezelése/MultipleControlledInputs.component";
 // import UncontrolledInputs from "./forms, inputok_kezelése/UncontrolledInputs.component";
 // import Main from "./propsDrilling/Main";
-import ContextTutorial from "./propsDrilling/ContextTutorial";
+// import ContextTutorial from "./propsDrilling/ContextTutorial";
 // import RefTutorial from "./useRef/RefTutorial";
 
 function App() {
   return (
     <div>
-      <ContextTutorial />
+      <MultipleControlledInputs />
     </div>
   );
 }
